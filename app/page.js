@@ -1,4 +1,5 @@
 'use client';
+import Image from "next/image"; 
 import React, { useState, useEffect } from 'react';
 
 const App = () => {
@@ -71,9 +72,11 @@ const App = () => {
 
     return (
       <div className="book-card bg-white rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col">
-        <img
+        <Image
           src={coverUrl}
           alt={`Cover of ${book.title}`}
+          width={180}
+          height={250}
           className="book-cover object-cover w-full h-48 md:h-64 rounded-t-2xl"
           onError={handleImageError}
         />
@@ -96,7 +99,10 @@ const App = () => {
     <div className="min-h-screen bg-gray-100 flex flex-col font-sans">
       <header className="bg-white shadow-md py-6">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between">
-          <h1 className="text-4xl font-extrabold text-gray-800 mb-4 sm:mb-0">Alex's Book Hub</h1>
+          <h1 className="text-4xl font-extrabold text-gray-800 mb-4 sm:mb-0">
+            Alex&apos;s Book Hub
+          </h1>
+
           <p className="text-gray-600 text-xl text-center">Your modern source for book discovery.</p>
         </div>
       </header>
